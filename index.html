@@ -1,0 +1,501 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRATION</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="website description" />
+    <meta name="keywords" content="website keywords, website keywords" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        body {
+            font: normal .80em 'trebuchet ms', arial, sans-serif;
+            background: #F0EFE2;
+        }
+
+        form,
+        input,
+        select,
+        textarea,
+        p {
+            padding: 0;
+            margin: 0;
+            outline: none;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+            line-height: 22px;
+        }
+
+        h1 {
+            position: absolute;
+            margin: 0;
+            font-size: 32px;
+            color: #fff;
+            z-index: 2;
+        }
+
+        h5 {
+            margin: 10px 0;
+        }
+
+        .testbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: inherit;
+            padding: 20px;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        form {
+            padding: 20px;
+            border-radius: 6px;
+            background: #fff;
+            box-shadow: 0 0 20px 0 #94c5e4;
+        }
+
+        input,
+        select,
+        textarea {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input {
+            width: calc(100% - 10px);
+            padding: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 7px 0;
+            background: transparent;
+        }
+
+        .error-item {
+            color: red;
+            font-size: 15px;
+            padding: 0px;
+        }
+
+        textarea {
+            width: calc(100% - 12px);
+            padding: 5px;
+        }
+
+        .item:hover p,
+        .item:hover i,
+        .question:hover p,
+        .question label:hover,
+        input:hover::placeholder,
+        a {
+            color: #095484;
+        }
+
+        .item input:hover,
+        .item select:hover,
+        .item textarea:hover {
+            border: 1px solid transparent;
+            box-shadow: 0 0 6px 0 #095484;
+            color: #095484;
+        }
+
+        .item {
+            position: relative;
+            margin: 10px 0;
+        }
+
+        input[type="date"]::-webkit-inner-spin-button {
+            display: none;
+        }
+
+        .item i,
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            font-size: 20px;
+            color: #a9a9a9;
+        }
+
+        .item i {
+            right: 2%;
+            top: 30px;
+            z-index: 1;
+        }
+
+        [type="date"]::-webkit-calendar-picker-indicator {
+            right: 1%;
+            z-index: 2;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        input[type=radio],
+        input[type=checkbox] {
+            display: none;
+        }
+
+        label.radio,
+        label.check {
+            position: relative;
+            display: inline-block;
+            margin: 5px 20px 15px 0;
+            cursor: pointer;
+        }
+
+        .question span {
+            margin-left: 30px;
+        }
+
+        span.required {
+            margin-left: 0;
+            color: red;
+        }
+
+        .checkbox-item label {
+            margin: 5px 20px 10px 0;
+        }
+
+        label.radio:before,
+        label.check:before {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        label.radio:before {
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            border: 2px solid #095484;
+        }
+
+        label.check:before {
+            top: 2px;
+            width: 16px;
+            height: 16px;
+            border-radius: 2px;
+            border: 1px solid #095484;
+        }
+
+        input[type=checkbox]:checked+.check:before {
+            background: #095484;
+        }
+
+        label.radio:after {
+            left: 5px;
+            border: 3px solid #095484;
+        }
+
+        label.check:after {
+            left: 4px;
+            border: 3px solid #fff;
+        }
+
+        label.radio:after,
+        label.check:after {
+            content: "";
+            position: absolute;
+            top: 6px;
+            width: 8px;
+            height: 4px;
+            background: transparent;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+            opacity: 0;
+        }
+
+        input[type=radio]:checked+label:after,
+        input[type=checkbox]:checked+label:after {
+            opacity: 1;
+        }
+
+        .btn-block {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        button {
+            width: 150px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #095484;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0666a3;
+        }
+
+        @media (min-width: 568px) {
+            .name-item,
+            .city-item,
+            .country-item {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .name-item input,
+            .city-item input,
+            .country-item select {
+                width: calc(50% - 20px);
+            }
+
+            .city-item input,
+            .country-item select {
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title" style="text-align: center;">REGISTRATION FORM</div>
+        <div class="content">
+            <div class="user-details">
+                <div class="input-box">
+                    <form id="uploadForm" action="https://script.google.com/macros/s/AKfycbwnByWFf1yEs0ocOrm0aFuacEzBat2Tp99MtH8UjBSaeHPzc6ITFiFhdCCU31q3bJV2mQ/exec" method="POST">
+            <h1>Register</h1>
+            <div class="item">
+                <p>Name <span class="required">*</span></p>
+                <small>After the application, you will recieve a confirmation message by email. Please click the link in the comfirmation message to verify your email address.  If you do not recieve the message, please check your email address.  </small>
+                <input type="text" name="name" maxlength="32" required id="id_name">
+                <!-- 
+                <input type="text" name="name" required/> -->
+              </div>
+              <div class="item">
+                <p>Email<span class="required">*</span></p>
+                <small>Please use the insitution Email rather than the personal one.</small>
+                <input type="email" name="email" maxlength="254" required id="id_email">
+                <div class ="error-item">
+                  
+                </div>
+              </div>
+              <div class="item">
+                <p>Confirm Email<span class="required">*</span></p>
+                <small>Please double check your Email since it is the only way we can reach out.</small>
+                <input type="email" name="email_check" maxlength="254" required id="id_email_check">
+                <div class ="error-item">
+                  
+                </div>
+              </div>
+              <div class="item">
+                <p>Country<span class="required">*</span></p>
+                <select name="country" required id="id_country">
+    <option value="" selected>---------</option>
+  
+    <option value="AD">Andorra</option>
+  
+    <option value="AE">United Arab Emirates</option>
+  
+    <option value="AF">Afghanistan</option>
+
+    <option value="AQ">Antarctica</option>
+  
+    <option value="AR">Argentina</option>
+  
+    <option value="AS">American Samoa</option>
+  
+    <option value="AT">Austria</option>
+  
+    <option value="AU">Australia</option>
+  
+    <option value="AW">Aruba</option>
+  
+    <option value="AZ">Azerbaijan</option>
+  
+    <option value="BA">Bosnia and Herzegovina</option>
+  
+    <option value="BB">Barbados</option>
+  
+    <option value="BD">Bangladesh</option>
+  
+    <option value="BE">Belgium</option>
+  
+    <option value="BF">Burkina Faso</option>
+  
+    <option value="BG">Bulgaria</option>
+  
+    <option value="BH">Bahrain</option>
+  
+    <option value="BI">Burundi</option>
+  
+    <option value="BJ">Benin</option>
+  
+    <option value="BY">Belarus</option>
+  
+    <option value="BZ">Belize</option>
+  
+    <option value="CN">China</option>
+  
+    <option value="CO">Colombia</option>
+  
+    <option value="CR">Costa Rica</option>
+  
+    <option value="CU">Cuba</option>
+  
+    <option value="CV">Cape Verde</option>
+  
+    <option value="CX">Christmas Island</option>
+  
+    <option value="CY">Cyprus</option>
+  
+    <option value="CZ">Czech Republic</option>
+  
+    <option value="DE">Germany</option>
+  
+    <option value="DJ">Djibouti</option>
+  
+    <option value="DK">Denmark</option>
+  
+    <option value="DM">Dominica</option>
+  
+    <option value="DO">Dominican Republic</option>
+  
+    <option value="DZ">Algeria</option>
+  
+    <option value="IND">India</option>
+  
+    <option value="EE">Estonia</option>
+  
+    <option value="EG">Egypt</option>
+    <option value="ZZ">Unknown or unspecified country</option>
+  
+  </select>
+              </div>
+              <div class="item">
+                <p>Institution<span class="required">*</span></p>
+                <small>Please fill the full name of the institution</small>
+                <input type="text" name="institution" maxlength="32" required id="id_institution">
+              </div>
+              <div class="item">
+                <p>Department<span class="required">*</span></p>
+                <small>Please fill the full name of the department</small>
+                <input type="text" name="department" maxlength="32" required id="id_department">
+              </div>
+  
+              <div class="item">
+                <p>Lab Home Page (Optional)</p>
+                <small>Please fill in the URL of your lab's home page</small>
+                <input type="text" name="lab_link" maxlength="64" id="id_lab_link">
+                <div class ="error-item">
+                  
+                </div>
+              </div>
+              <div class="question">
+                <p>Position<span class="required">*</span></p>
+                <div class="question-answer checkbox-item">
+                  <select name="position" required id="id_position">
+    <option value="" selected>---------</option>
+  
+    <option value="student">Ph.D. Student</option>
+  
+    <option value="student">Master Student</option>
+  
+    <option value="student">Bachelor Student</option>
+  
+    <option value="student">Other Student</option>
+  
+    <option value="professor">Assistant Professor</option>
+  
+    <option value="professor">Associate Professor</option>
+  
+    <option value="professor">Professor</option>
+  
+    <option value="researcher">Researcher</option>
+  
+  </select>
+                </div>
+              </div>
+              <div class="item">
+                <p>Supervisor Name</p>
+                <small>Please fill in this field if you are a student</small>
+                <input type="text" name="supervisor_name" maxlength="32" id="id_supervisor_name">
+                <div class ="error-item">
+                  
+                </div>
+              </div>
+              <div class="item">
+                <p>Supervisor Email</p>
+                <small>Please fill in this field if you are a student</small>
+                <input type="email" name="supervisor_email" maxlength="32" id="id_supervisor_email">
+                <div class ="error-item">
+                  
+                </div>
+              </div>
+              <div class="item">
+                <p>License<span class="required">*</span> &emsp; <a href="https://drive.google.com/file/d/1X7QohchZYPl3y8eUosoh014MatOWVTRf/view?usp=sharing" target="_blank">Download license file</a></p>
+                <small>Please upload license file as pdf. The file needs to be smaller than 1M.</small>
+                <input type="file" name="license" accept="application/pdf" required id="id_license">
+                <div class ="error-item">
+                    <script>
+                        function UploadFile() {
+                            var reader = new FileReader();
+                            var file = document.getElementById('id_license').files[0];
+                            reader.onload = function(){
+                                document.getElementById('fileContent').value=reader.result;
+                                document.getElementById('filename').value=file.name;
+                                document.getElementById('uploadForm').submit();
+                            }
+                            reader.readAsDataURL(file);
+                        }
+                    </script>
+                </div>
+              </div>
+              <div class="question">
+                <p>Dataset Application Checklist:<span class="required">*</span></p>
+                <small>Please choose which dataset do you apply for.</small>
+                <div class="question-answer checkbox-item">
+                  <select name="dataset" required id="id_dataset">
+    <option value="" selected>---------</option>
+  
+    <option value="seed">1</option>
+  
+    <option value="seed_4">2</option>
+  
+    <option value="seed_5">3</option>
+  
+    <option value="seed_vig">4</option>
+  
+    <option value="seed_ger">5</option>
+  
+    <option value="seed_fra">6</option>
+  
+  </select>
+                </div>
+              </div>
+              
+            
+        
+              <div class="btn-block">
+            
+                <button type="submit" value="submit" color="orange"onclick="UploadFile();">Submit Application</button>
+              </div>
+            </form>
+  
+      </div>
+      <div id="content_footer"></div>
+      <div id="footer">
+          Copyright &copy; 2019 CUSB
+      </div>
+  </div>     
+   </form>
+    </div>
+</body>
+
+</html>
