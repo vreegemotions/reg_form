@@ -888,7 +888,45 @@
                 <button type="submit" value="submit" color="orange"onclick="UploadFile();">Submit Application</button>
               </div>
             </form>
-  
+
+         <div>
+    <a href="https://docs.google.com/spreadsheets/d/14ZiyzXBf5b-JTEG-t2u67IuxRMo8b6C-lZeGwWsvurQ/edit#gid=0" class="btn btn-primary" target="_blank">VIEW DATA</a>
+    <button class="btn btn-danger" type="reset">RESET FORM</button>
+</div>
+</div>
+</div>
+
+            <div>
+                        <a href="https://docs.google.com/spreadsheets/d/1Oxl9Lv8L85wfsPMnC_LQKRulL-nb23GlSp3By7sto_M/edit#gid=0" class="btn btn-primary">
+                        
+                    </div>
+                </div>
+            </div>
+
+<script>
+    function UploadFile() {
+        var fileInput = document.getElementById('attach');
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function () {
+            var fileContent = reader.result.split(',')[1]; // Get the base64 content (excluding the data URI scheme)
+            var filename = file.name;
+
+            // Set the values in the form
+            document.getElementById('fileContent').value = fileContent;
+            document.getElementById('filename').value = filename;
+
+            // Submit the form
+            document.getElementById('uploadForm').submit();
+        };
+
+        reader.readAsDataURL(file);
+    }
+</script>
+
+
+                    
       </div>
       <div id="content_footer"></div>
       <div id="footer">
