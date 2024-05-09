@@ -1,6 +1,6 @@
 # reg_form
  https://vreegemotions.github.io/reg_form/
 
- https://script.google.com/macros/s/AKfycbwricQC6uSpKUgMylTuIAVoZBWx_p-OFP-Rj0fZeJeZkK25FwOGoyC2cRYyDrxxVHss/exec
 
+https://script.google.com/macros/s/AKfycbzi2gX4Y2-7HG8s1w8voMn5yMvrVw2444e1aUtLwDz7Nfup2PuARcXYHqIGNZMdS_83/exec
 
